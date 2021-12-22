@@ -1,0 +1,280 @@
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    title Dociva - Home
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&family=Inter:wght@400;600;700&display=swap", rel="stylesheet")
+    link(href="index.css", rel="stylesheet")
+  body
+    main
+      section.landing
+        .landing__nav
+          h1.landing__nav__logo Dociva
+
+          .landing__nav__menu
+            button(aria-controls="navigation-links", aria-expanded="false").landing__nav__menu__hamburger
+
+            ul.landing__nav__menu__links(data-visible="false")
+              li 
+                a(href="#").landing__nav__menu__links__link Home
+              li 
+                a(href="#").landing__nav__menu__links__link About us
+              li 
+                a(href="#").landing__nav__menu__links__link Contact
+
+        h1.landing__title You first.
+        p.landing__tagline Welcome to the app that makes your health the top priority.
+
+        .landing__interactions
+          button.landing__interactions__cta Sign up
+          a(href="#").landing__interactions__link Learn more
+
+        .landing__more
+          i.fas.fa-mouse.landing__more__icon
+          i.fas.fa-arrow-down.landing__more__icon
+
+      section.for-you
+        h1.for-you__title The app made for you
+
+        .for-you__section
+          h1.for-you__section__title CONTROL
+          p.for-you__section__description Be in control of your own health! By using Dociva you take matters into your own hands, the app is here to help you manage your health in the best way.
+        
+        .for-you__section
+          h1.for-you__section__title SAFETY
+          p.for-you__section__description All of the data that we receive from our users is encrypted and stored in our safe servers. If you're using Dociva you shouldn't be afraid of hacks and data leaks. Everything is stored safely. We guarantee that.
+        
+        .for-you__section
+          h1.for-you__section__title TRUSTED
+          p.for-you__section__description We're trusted by many multi-billion dollar companies and over a million users just like you. We're also big believers in doctor-patient confidentiality, so you can be sure that by using Dociva you're in good hands.
+
+      section.services
+        h1.services__title Our Services
+
+        .services__features
+          .services__features__feature
+            i.fas.fa-plus.services__features__feature__icon
+            h1.services__features__feature__title 24/7 Support
+            p.services__features__feature__description Our staff is at your disposal every single hour of the day. Reach out for any problems.
+          
+          .services__features__feature
+            i.fas.fa-file-medical.services__features__feature__icon
+            h1.services__features__feature__title Health documents
+            p.services__features__feature__description Get easy access to your health documents uploaded by your own doctors.
+          
+          .services__features__feature
+            i.fas.fa-user-md.services__features__feature__icon
+            h1.services__features__feature__title 1-to-1 with doctors
+            p.services__features__feature__description Schedule appointments with your doctor instantly, without hassle. No fees required.
+
+      section.doctors-nurses
+        h1.doctors-nurses__title Doctors and nurses, one app away
+        p.doctors-nurses__tagline Dociva allows you to take control of your own health and make same-day appointments with your doctor easily by using the app.
+        button.doctors-nurses__cta Learn more
+
+      section.how-it-works
+        h1.how-it-works__title How it works
+
+        ul.how-it-works__list
+          li.how-it-works__list__item
+            h2.how-it-works__list__item__number 01
+            h1.how-it-works__list__item__title Create an account
+            p.how-it-works__list__item__description Firstly, you need to enter the information required by us to create your own account.
+
+          li.how-it-works__list__item
+            h2.how-it-works__list__item__number 02
+            h1.how-it-works__list__item__title Get a membership
+            p.how-it-works__list__item__description Choose one of our membership plans to start your journey to better health and living.
+            
+          li.how-it-works__list__item
+            h2.how-it-works__list__item__number 03
+            h1.how-it-works__list__item__title Search for your doctors
+            p.how-it-works__list__item__description Using our search function you can find your doctors and nurses that are in the system.
+
+          li.how-it-works__list__item
+            h2.how-it-works__list__item__number 04
+            h1.how-it-works__list__item__title Get acces to your documents
+            p.how-it-works__list__item__description The doctors upload your health documents after every session, so you can check back and take a look.
+
+          li.how-it-works__list__item
+            h2.how-it-works__list__item__number 05
+            h1.how-it-works__list__item__title Set up 1-one-1 meetings
+            p.how-it-works__list__item__description With Dociva you can set up online meetings with your doctors whenever you feel like it.
+
+      section.plans
+        h1.plans__title Membership plans
+
+        .plans__plan
+          .plans__plan__discount
+            span.plans__plan__discount__text 25%
+            span.plans__plan__discount__text OFF
+
+          h1.plans__plan__type Basic plan
+
+          .plans__plan__price
+            h3.plans__plan__price__old $9.99
+            h2.plans__plan__price__new $7.99
+
+          p.plans__plan__billing /month
+          p.plans__plan__details The "Basic" plan includes 1-on-1 meetings with your doctors, the ability to see your documents and 24/7 online support.
+          button.plans__plan__cta Sign up
+
+        .plans__plan
+          .plans__plan__discount
+            span.plans__plan__discount__text 33%
+            span.plans__plan__discount__text OFF
+
+          h1.plans__plan__type Regular plan
+
+          .plans__plan__price
+            h3.plans__plan__price__old $29.99
+            h2.plans__plan__price__new $19.99
+
+          p.plans__plan__billing /month
+          p.plans__plan__details This plan includes everything that is in the "Basic" plan plus the ability to schedule same-day appointments.
+          button.plans__plan__cta Sign up
+
+        .plans__plan
+          .plans__plan__discount
+            span.plans__plan__discount__text 50%
+            span.plans__plan__discount__text OFF
+
+          h1.plans__plan__type Ultimate plan
+
+          .plans__plan__price
+            h3.plans__plan__price__old $59.99
+            h2.plans__plan__price__new $29.99
+
+          p.plans__plan__billing /month
+          p.plans__plan__details The "Ultimate" plan includes all of the features of the two previous plans plus the ability to get cheaper medicine prescriptions.
+          button.plans__plan__cta Sign up
+
+      section.reviews
+        h1.reviews__title What our members say
+        
+        .reviews__items
+          .reviews__items__card.active-review
+            h2.reviews__items__card__name Lauren
+            
+            .reviews__items__card__review
+              img(src="reviewgirl.jpg").reviews__items__card__review__photo
+
+              .reviews__items__card__review__stars
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+
+              p.reviews__items__card__review__text I'm totally impressed by the quality of the Dociva app! I've been looking for a way to contact my doctors online and I think this is the most amazing way of doing that!
+          
+          .reviews__items__card
+            h2.reviews__items__card__name Alexia
+            
+            .reviews__items__card__review
+              img(src="reviewgirl2.jpg").reviews__items__card__review__photo
+
+              .reviews__items__card__review__stars 
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+
+              p.reviews__items__card__review__text Considering I have many health problems going to hospitals a few days a week became a chore. Luckily, with Dociva you can schedule those visits online, which makes it so much better.
+
+          .reviews__items__card
+            h2.reviews__items__card__name Daniel
+            
+            .reviews__items__card__review
+              img(src="reviewboy.jpg").reviews__items__card__review__photo
+
+              .reviews__items__card__review__stars
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+
+              p.reviews__items__card__review__text I suffer from mental health issues that manifest as Agoraphobia, so it was very hard for me to see a doctor in person. I was happy when I found Dociva because I can schedule the visits to be online, which is a huge weight off my shoulders.
+
+          .reviews__items__card
+            h2.reviews__items__card__name Ryan
+            
+            .reviews__items__card__review
+              img(src="reviewboy2.jpg").reviews__items__card__review__photo
+
+              .reviews__items__card__review__stars
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+                i.fas.fa-star.reviews__items__card__review__stars__star
+
+              p.reviews__items__card__review__text I can say that this app changed my life! I suffer from pancreatic cancer and the fact that I have all my medical files in one place with notes from my doctors is amazing!
+
+        .reviews__picker
+          input(type="radio", name="picker", title="pick1").reviews__picker__pick.active-input
+          input(type="radio", name="picker", title="pick2").reviews__picker__pick
+          input(type="radio", name="picker", title="pick3").reviews__picker__pick
+          input(type="radio", name="picker", title="pick4").reviews__picker__pick
+
+      section.partners
+        h1.partners__title Our partners
+
+        .partners__icons
+          a(href="#").fab.fa-twitch.partners__icons__partner
+          a(href="#").fab.fa-foursquare.partners__icons__partner
+          a(href="#").fab.fa-kickstarter-k.partners__icons__partner
+          a(href="#").fab.fa-playstation.partners__icons__partner
+          a(href="#").fab.fa-squarespace.partners__icons__partner
+
+        a(href="#").partners__more Learn more about partnerships &#8594;
+
+      section.covid
+        h1.covid__title Your health during these times.
+        p.covid__tagline With a global pandemic that has taken the lives of so many people it's very important to stay safe during this craze. Learn more about how our company managed to make everyone's health a priority during a very difficult time in many people's lives.
+        button.covid__cta Covid-19 crisis
+
+      footer.footer
+        h1.footer__title Start your journey today
+
+        .footer__ctas
+          button.footer__ctas__cta Sign up
+          button.footer__ctas__cta For doctors
+
+        hr.footer__delimiter
+
+        .footer__information
+          .footer__information__links
+            a(href="#").footer__information__links__link Blog
+            a(href="#").footer__information__links__link Careers
+            a(href="#").footer__information__links__link Services
+            a(href="#").footer__information__links__link Billing
+            a(href="#").footer__information__links__link Customer service
+            a(href="#").footer__information__links__link FAQ
+            a(href="#").footer__information__links__link Gifts
+
+          hr.footer__information__delimiter
+
+          .footer__information__useful
+            .footer__information__useful__follow
+              h1.footer__information__useful__follow__title Follow us
+              
+              a(href="#").fab.fa-facebook.footer__information__useful__follow__icon
+              a(href="#").fab.fa-twitter.footer__information__useful__follow__icon
+              a(href="#").fab.fa-instagram.footer__information__useful__follow__icon
+
+            .footer__information__useful__contact
+              h1.footer__information__useful__contact__title Contact
+
+              .footer__information__useful__contact__phone
+                i.fas.fa-phone.footer__information__useful__contact__phone__icon
+                p.footer__information__useful__contact__phone__text +16102458148
+
+              .footer__information__useful__contact__email
+                i.fas.fa-at.footer__information__useful__contact__email__icon
+                p.footer__information__useful__contact__email__text support@dociva.com
+      
+      script(src="index.js")

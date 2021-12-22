@@ -1,0 +1,1277 @@
+@import '../0-utilities/_base.sass'
+@import '../0-utilities/_functions.sass'
+@import '../0-utilities/_utilities.sass'
+@import '../0-utilities/_variables.sass'
+
+// for review slider
+.active-input
+  width: rem(65) !important
+  background: $hotPink !important
+
+  border-radius: rem(50) !important
+
+.active-review
+  position: relative !important
+  top: 0 !important
+  opacity: 1 !important
+
+.landing
+  @extend %padding
+  display: flex
+  flex-direction: column
+  height: 100vh
+  padding-top: rem(10)
+  padding-bottom: rem(40)
+  background: linear-gradient(.75turn, rgba(65, 60, 105, .5), rgba(65, 60, 105, .8)), url('doctorheader.jpeg')
+    size: cover
+    position: 60%
+
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__logo
+      font:
+        family: $primary
+        weight: 700
+        size: rem(30)
+      color: $brightPink
+
+      @media (min-width: $medium)
+        font-size: rem(50)
+
+    &__menu
+      &__hamburger
+        position: relative
+        width: rem(32)
+        height: rem(32)
+        background-color: $brightPink
+        mask:
+          image: url('hamburger.svg')
+          repeat: no-repeat
+          position: center center
+        z-index: 2
+
+        @media (min-width: $medium)
+          width: rem(48)
+          height: rem(48)
+
+        @media (min-width: $large)
+          display: none
+
+      &__hamburger[aria-expanded="true"]
+        background-color: $brightPink
+        mask:
+          image: url('close.svg')
+          repeat: no-repeat
+          position: center center
+
+      &__links
+        display: none
+
+        list-style: none
+
+        @media (max-width: 63.9375rem) // $large - 1
+          display: flex
+          position: fixed
+          flex-direction: column
+          align-items: center
+          justify-content: center
+          gap: rem(40)
+          inset: 0 0 0 30%
+          background: $blue
+          transition: transform .3s ease-out
+          transform: translateX(100%)
+          z-index: 1
+
+        @media (min-width: $large)
+          display: flex
+          gap: rem(30)
+
+        li:not(:nth-of-type(1))
+          .landing__nav__menu__links__link
+            text-decoration: none
+
+        li:nth-of-type(1)
+          text-underline-offset: rem(5)
+
+        &__link
+          font:
+            family: $secondary
+            size: rem(30)
+          color: $brightPink
+
+          @media (min-width: $large)
+            &:hover
+              color: darken($brightPink, 10%)
+    
+      &__links[data-visible="true"]
+        @media (max-width: 63.9375rem) // $large - 1
+          transform: translateX(0%)
+
+  &__title
+    margin: auto 0 0
+
+    font:
+      family: $primary
+      size: rem(40)
+    color: $pink
+
+    @media (min-width: $medium)
+      font-size: rem(80)
+
+    @media (min-width: $large)
+      font-size: rem(100)
+
+  &__tagline
+    margin-top: rem(10)
+
+    font:
+      family: $secondary
+      size: rem(25)
+    color: $brightPink
+
+    @media (min-width: $medium)
+      font-size: rem(40)
+
+    @media (min-width: $large)
+      font-size: rem(50)
+
+  &__interactions
+    margin-top: rem(20)
+
+    @media (min-width: $medium)
+      margin-top: rem(40)
+
+    &__cta
+      width: rem(130)
+      height: rem(30)
+      background: $hotPink
+
+      font:
+        family: $primary
+        weight: 700
+        size: rem(15)
+      color: $brightPink
+
+      border: none
+        radius: rem(50)
+
+      box-shadow: 0 rem(6) rem(6) rgba(0, 0, 0, .15)
+
+      &::before
+        content: '\f234'
+        margin-right: rem(10)
+
+        font:
+          family: 'Font Awesome 6 Free'
+
+      @media (min-width: $medium)
+        width: rem(200)
+        height: rem(60)
+
+        font-size: rem(25)
+
+      @media (min-width: $large)
+        width: rem(300)
+        height: rem(70)
+
+        font-size: rem(30)
+
+        transition: background .3s ease
+        cursor: pointer
+
+        &:hover
+          background: $blue
+
+    &__link
+      margin-left: rem(20)
+
+      font:
+        family: $secondary
+        size: rem(15)
+      text-decoration: none
+      color: $brightPink
+
+      @media (min-width: $medium)
+        font-size: rem(25)
+
+      @media (min-width: $large)
+        font-size: rem(30)
+
+        &:hover
+          text-decoration: underline
+  
+  &__more
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: rem(10)
+    margin-top: auto
+
+    @media (min-width: $large)
+      align-items: initial
+
+    &__icon
+      font-size: rem(40)
+      color: $pink
+
+      opacity: .5
+
+.for-you
+  display: flex
+  flex-direction: column
+  margin-top: rem(60)
+
+  @media (min-width: $large)
+    margin-top: rem(100)
+
+  &__title
+    @extend %padding
+
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $hotPink
+
+    @media (min-width: $medium)
+      font-size: rem(60)
+    
+    @media (min-width: $large)
+      font-size: rem(80)
+
+  &__section
+    position: relative
+    margin-top: rem(60)
+    overflow: hidden
+
+    @media (min-width: $large)
+      margin-top: rem(100)
+
+      &:nth-of-type(2)
+        margin-left: auto
+
+        .for-you__section__title
+          right: 0
+          left: initial
+
+        .for-you__section__description
+          text-align: right
+
+    &__title
+      position: absolute
+      top: rem(-10)
+      left: 50%
+      transform: translateX(-50%)
+
+      font:
+        family: $primary
+        size: rem(60)
+      color: $burgundy
+      
+      opacity: .2
+      user-select: none
+
+      @media (min-width: $medium)
+        font-size: rem(80)
+
+      @media (min-width: $large)
+        left: 0
+        transform: translateX(0)
+
+        font-size: rem(140)
+
+      @media (min-width: $xlarge)
+        font-size: rem(180)
+
+    &__description
+      @extend %padding
+
+      padding-top: rem(30)
+
+      font:
+        family: $secondary
+        size: rem(20)
+      text-align: center
+      color: $blue
+      
+      @media (min-width: $medium)
+        padding-top: rem(40)
+        
+        font-size: rem(25)
+
+      @media (min-width: $large)
+        width: rem(800)
+        padding-top: rem(80)
+
+        font-size: rem(35)
+        text-align: left
+
+      @media (min-width: $xlarge)
+        width: rem(1200)
+
+        font-size: rem(40)
+
+.services
+  @extend %padding
+
+  margin-top: rem(100)
+
+  @media (min-width: $xlarge)
+    display: flex
+    align-items: center
+    gap: rem(80)
+    margin-top: rem(200)
+
+  &__title
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $hotPink
+
+    @media (min-width: $medium)
+      font-size: rem(60)
+    
+    @media (min-width: $xlarge)
+      text-align: left
+      font-size: rem(80)
+
+  &__features
+    @media (min-width: $xlarge)
+      // display: flex
+      position: relative
+      // flex-direction: column
+      // justify-content: center
+      margin-left: rem(80)
+
+      // border:
+      //   left: solid 8px $hotPink
+
+      &::before
+        content: ''
+        position: absolute
+        width: rem(10)
+        height: 100%
+        left: rem(-80)
+        background: $hotPink
+
+        border-radius: rem(50)
+
+    &__feature
+      margin-top: rem(60)
+
+      text-align: center
+
+      @media (min-width: $xlarge)
+        display: flex
+        flex-wrap: wrap
+
+        text-align: left
+
+        &:nth-of-type(1)
+          margin-top: 0
+
+      &__icon
+        font-size: rem(60)
+        color: $hotPink
+
+        @media (min-width: $xlarge)
+          font-size: rem(80)
+
+      &__title
+        margin-top: rem(20)
+
+        font:
+          family: $secondary
+          size: rem(30)
+        color: $burgundy
+
+        @media (min-width: $xlarge)
+          margin-left: rem(20)
+          font-size: rem(35)
+
+      &__description
+        margin-top: rem(10)
+
+        font:
+          family: $secondary
+          weight: 600
+          size: rem(20)
+        color: $blue
+
+        @media (min-width: $xlarge)
+          margin-top: rem(20)
+
+          font-size: rem(25)
+
+.doctors-nurses
+  @extend %padding
+
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  gap: rem(20)
+  height: rem(500)
+  margin-top: rem(60)
+  padding-bottom: rem(20)
+  background: linear-gradient(.50turn, rgba(65, 60, 105, .3), rgba(65, 60, 105, .9)), url('nursephone.jpeg')
+    size: cover
+    position: center center
+
+  @media (min-width: $medium)
+    height: rem(600)
+
+  @media (min-width: $large)
+    margin-top: rem(100)
+  
+  &__title
+    font:
+      family: $primary
+      size: rem(30)
+    color: $pink
+
+    @media (min-width: $medium)
+      font-size: rem(35)
+
+    @media (min-width: $large)
+      font-size: rem(40)
+
+  &__tagline
+    font:
+      family: $secondary
+      size: rem(20)
+    color: $brightPink
+
+    @media (min-width: $medium)
+      font-size: rem(25)
+
+    @media (min-width: $large)
+      font-size: rem(30)
+
+  &__cta
+    width: rem(130)
+    height: rem(30)
+    background: $hotPink
+
+    font:
+      family: $primary
+      weight: 700
+      size: rem(15)
+    color: $brightPink
+
+    border: none
+      radius: rem(50)
+
+    box-shadow: 0 rem(6) rem(6) rgba(0, 0, 0, .15)
+
+    @media (min-width: $medium)
+      width: rem(160)
+      height: rem(40)
+
+      font-size: rem(20)
+
+    @media (min-width: $large)
+      width: rem(200)
+      height: rem(50)
+
+      font-size: rem(25)
+
+      transition: background .3s ease
+      cursor: pointer
+
+      &:hover
+        background: $blue
+
+.how-it-works
+  @extend %padding
+
+  margin-top: rem(60)
+
+  @media (min-width: $large)
+    margin-top: rem(100)
+
+  &__title
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $hotPink
+
+    @media (min-width: $medium)
+      font-size: rem(60)
+    
+    @media (min-width: $large)
+      font-size: rem(80)
+
+  &__list
+    display: flex
+    position: relative
+    flex-direction: column
+    gap: rem(40)
+    margin-top: rem(40)
+    padding-right: rem(40)
+
+    list-style: none
+
+    @media (min-width: $medium)
+      gap: rem(80)
+      margin-top: rem(60)
+
+    @media (min-width: $large)
+      gap: rem(100)
+      padding-right: 0
+    
+    &::after
+      content: ''
+      position: absolute
+      width: rem(10)
+      height: 100%
+      background: #E4E4E4
+      top: 0
+      right: 0
+
+      border-radius: rem(50)
+
+      @media (min-width: $large)
+        left: 50%
+        transform: translateX(-50%)
+
+    &__item
+      display: grid
+      position: relative
+      grid-template-areas: 'number title' 'number description'
+      gap: rem(0) rem(10)
+
+      @media (min-width: $large)
+        max-width: 40%
+        padding-top: rem(10)
+
+        &:nth-child(even)
+          align-self: flex-end
+
+          &::after
+            left: -25%
+
+            transform: translateX(-50%)
+
+        &:nth-child(odd)
+          &::after
+            right: -25%
+
+            transform: translateX(50%)
+
+      &::after
+        content: ''
+        position: absolute
+        width: rem(20)
+        height: rem(20)
+        right: rem(-35)
+        transform: translateX(50%)
+        margin-top: rem(5)
+        z-index: 1
+        background: $blue
+
+        border-radius: 50%
+
+        @media (min-width: $medium)
+          width: rem(35)
+          height: rem(35)
+
+        @media (min-width: $large)
+          width: rem(50)
+          height: rem(50)
+
+      &__number
+        grid-area: number
+
+        font:
+          family: $primary
+          weight: 700
+          size: rem(20)
+        color: $blue
+
+        @media (min-width: $medium)
+          font-size: rem(30)
+
+      &__title
+        grid-area: title
+
+        font:
+          family: $primary
+          weight: 700
+          size: rem(20)
+        color: $burgundy
+
+        @media (min-width: $medium)
+          font-size: rem(30)
+
+      &__description
+        grid-area: description
+
+        font:
+          family: $secondary
+          weight: 600
+          size: rem(15)
+        color: $blue
+
+        @media (min-width: $medium)
+          margin-top: rem(10)
+
+          font-size: rem(25)
+    
+.plans
+  @extend %padding
+
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: rem(80) rem(40)
+  margin-top: rem(60)
+  padding-top: rem(40)
+  padding-bottom: rem(40)
+  background: $blue
+
+  @media (min-width: $medium)
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+
+  @media (min-width: $large)
+    margin-top: rem(100)
+
+  &__title
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $pink
+
+    @media (min-width: $medium)
+      flex-basis: 100%
+
+      font-size: rem(60)
+    
+    @media (min-width: $large)
+      font-size: rem(80)
+
+  &__plan
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: rem(10)
+    max-width: rem(350)
+    min-height: rem(450)
+    padding: rem(20)
+      top: 0
+    background: darken($blue, 10%)
+
+    border-radius: rem(10)
+    box-shadow: rem(12) rem(12) rem(20) rgba(0, 0, 0, .15)
+
+    &:nth-of-type(3)
+      background: #FFAFAF
+
+      .plans__plan__discount
+        background: #0F2C67
+
+      .plans__plan__type
+        color: #0F2C67
+
+      .plans__plan__price
+        &__old
+          color: #C84B31
+
+        &__new
+          color: #F14A16
+
+      .plans__plan__billing
+        color: #0F2C67
+      
+      .plans__plan__details
+        color: #0F2C67
+      
+      .plans__plan__cta
+        background: #0F2C67
+
+        @media (min-width: $large)
+          &:hover
+            background: #F14A16
+
+            color: #0F2C67
+
+    &__discount
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      align-self: flex-start
+      margin-bottom: auto
+      width: rem(40)
+      height: rem(50)
+      background: $hotPink
+
+      &__text
+        font:
+          family: $primary
+          weight: 700
+          size: rem(15)
+        color: $brightPink
+
+    &__type, &__billing
+      font:
+        family: $primary
+        size: rem(30)
+      color: $pink
+
+    &__price
+      display: flex
+      align-items: center
+      gap: rem(10)
+
+      &__old, &__new
+        font:
+          family: $secondary
+          weight: 400
+        
+      &__old
+        font-size: rem(20)
+        text-decoration: line-through
+        color: $burgundy
+
+      &__new
+        font-size: rem(30)
+        color: $hotPink
+    
+    &__details
+      font:
+        family: $secondary
+        size: rem(20)
+      text-align: center
+      color: $brightPink
+
+    &__cta
+      width: rem(110)
+      height: rem(30)
+      margin-top: rem(10)
+      margin-bottom: auto
+      background: $hotPink
+
+      font:
+        family: $primary
+        weight: 700
+        size: rem(15)
+      color: $brightPink
+
+      border: none
+        radius: rem(50)
+
+      box-shadow: 0 rem(6) rem(6) rgba(0, 0, 0, .15)
+
+      @media (min-width: $large)
+        width: rem(130)
+        height: rem(40)
+
+        font-size: rem(20)
+
+        transition: background .3s ease
+        cursor: pointer
+
+        &:hover
+          background: $blue
+
+.reviews
+  @extend %padding
+
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  margin-top: rem(60)
+
+  @media (min-width: $large)
+    margin-top: rem(100)
+
+  &__title
+    flex-basis: 100%
+
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $hotPink
+
+    @media (min-width: $medium)
+      font-size: rem(60)
+    
+    @media (min-width: $large)
+      font-size: rem(80)
+
+  &__items
+    display: flex
+    position: relative
+
+    @media (min-width: $large)
+      max-width: rem(800)
+
+    &__card
+      display: flex
+      position: absolute
+      flex-direction: column
+      align-items: center
+      opacity: 0
+      top: rem(-250) // for mobile since the third review is over the picker
+
+      &__name
+        width: rem(200)
+        margin-top: rem(40)
+        padding: rem(10) 0
+        position: relative
+        background: $blue
+
+        font:
+          family: $primary
+          weight: 700
+          size: rem(20)
+        text-align: center
+        color: $brightPink
+
+        border-radius: rem(10)
+
+        &::after
+          content: ''
+          position: absolute
+          width: 0
+          height: 0
+          border:
+            left: 10px solid transparent
+            right: 10px solid transparent
+            top: 10px solid $blue
+          right: 50%
+          bottom: 0
+          transform: translate(50%, 100%)
+
+        @media (min-width: $medium)
+          width: rem(240)
+          font-size: rem(25)
+
+      &__review
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-top: rem(70)
+        padding: rem(20)
+          top: 0
+        background: #E6E6E6
+
+        border-radius: rem(10)
+
+        @media (min-width: $large)
+          padding: rem(40)
+            top: 0
+
+        &__photo
+          width: rem(80)
+          height: rem(80)
+          object-fit: cover
+          transform: translateY(-50%)
+
+          border: solid 5px $hotPink
+            radius: 50%
+
+        &__stars
+          display: flex
+          gap: rem(5)
+          margin-top: rem(-10)
+
+          &__star
+            font-size: rem(25)
+            color: $hotPink
+
+            @media (min-width: $medium)
+              font-size: rem(30)
+
+        &__text
+          margin-top: rem(40)
+
+          font:
+            family: $secondary
+            size: rem(20)
+          text-align: center
+          color: $blue
+
+          @media (min-width: $medium)
+            font-size: rem(25)
+    
+  &__picker
+    display: flex
+    justify-content: center
+    gap: rem(20)
+    margin-top: rem(40)
+
+    &__pick
+      width: rem(25)
+      height: rem(25)
+      background: $pink
+
+      appearance: none
+      border-radius: 50%
+      transition: all .5s ease
+
+      @media (min-width: $large)
+        cursor: pointer
+
+.partners
+  margin-top: rem(100)
+
+  @media (min-width: $large)
+    margin-top: rem(200)
+
+  &__title
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $hotPink
+
+    @media (min-width: $medium)
+      font-size: rem(60)
+    
+    @media (min-width: $large)
+      font-size: rem(80)
+  
+  &__icons
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: rem(40)
+    margin-top: rem(60)
+
+    @media (min-width: $large)
+      flex-direction: row
+      justify-content: center
+      gap: rem(80)
+      margin-top: rem(100)
+
+    &__partner
+      font-size: rem(65)
+      text-decoration: none
+      color: $pink
+
+      @media (min-width: $medium)
+        font-size: rem(90)
+
+      @media (min-width: $large)
+        cursor: pointer
+
+        &:hover
+          color: $hotPink
+
+  &__more
+    display: block
+    margin-top: rem(20)
+
+    font:
+      family: $primary
+      size: rem(15)
+      style: italic
+    text:
+      decoration: none
+      align: center
+    color: $hotPink
+
+    @media (min-width: $medium)
+      font-size: rem(25)
+
+    @media (min-width: $large)
+      margin-top: rem(60)
+
+      &:hover
+        text-decoration: underline
+
+.covid
+  @extend %padding
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: rem(20)
+  height: rem(500)
+  margin-top: rem(60)
+  background: linear-gradient(.25turn, rgba(65, 60, 105, .5), rgba(65, 60, 105, .8)), url("doctorworld.jpeg")
+    size: cover
+
+  @media (min-width: $medium)
+    background: linear-gradient(.25turn, rgba(65, 60, 105, .5), rgba(65, 60, 105, .8)), url("doctorworld.jpeg")
+      size: cover
+      position: center
+
+  @media (min-width: $large)
+    height: rem(700)
+    margin-top: rem(100)
+
+  @media (min-width: $xlarge)
+    position: relative
+    padding-left: 31%
+    background: url("doctorworld.jpeg"), linear-gradient(.25turn, rgba(65, 60, 105, .5), rgba(65, 60, 105, .8))
+      repeat: no-repeat
+      size: 35%
+      position: left center
+
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      background: linear-gradient(.25turn, rgba(65, 60, 105, .4) 20%, rgba(65, 60, 105, 1) 30%, rgba(65, 60, 105, 1) 50%, rgba(65, 60, 105, 1) 100%)
+      z-index: 0
+
+  &__title
+    font:
+      family: $primary
+      size: rem(30)
+    color: $pink
+
+    @media (min-width: $medium)
+      font-size: rem(40)
+
+    @media (min-width: $large)
+      z-index: 1
+
+      font-size: rem(50)
+
+  &__tagline
+    font:
+      family: $secondary
+      size: rem(20)
+    color: $brightPink
+
+    @media (min-width: $medium)
+      font-size: rem(25)
+
+    @media (min-width: $large)
+      z-index: 1
+
+      // font-size: rem(30)
+
+  &__cta
+    width: rem(140)
+    height: rem(30)
+    background: $hotPink
+
+    font:
+      family: $primary
+      weight: 700
+      size: rem(15)
+    color: $brightPink
+
+    border: none
+      radius: rem(50)
+
+    box-shadow: 0 rem(6) rem(6) rgba(0, 0, 0, .15)
+
+    @media (min-width: $medium)
+      width: rem(180)
+      height: rem(40)
+
+      font-size: rem(20)
+
+    @media (min-width: $large)
+      width: rem(220)
+      height: rem(50)
+      z-index: 1
+      font-size: rem(25)
+
+      transition: background .3s ease
+      cursor: pointer
+
+      &:hover
+        background: $brightPink
+
+        color: $blue
+
+.footer
+  @extend %padding
+
+  padding:
+    top: rem(40)
+    bottom: rem(40)
+  background: darken($blue, 15%)
+
+  &__title
+    font:
+      family: $primary
+      size: rem(40)
+    text-align: center
+    color: $pink
+
+    @media (min-width: $medium)
+      font-size: rem(60)
+    
+    @media (min-width: $large)
+      font-size: rem(80)
+
+  &__ctas
+    display: flex
+    justify-content: center
+    gap: rem(20)
+    margin-top: rem(20)
+
+    @media (min-width: $medium)
+      gap: rem(40)
+
+    &__cta
+      width: rem(120)
+      height: rem(35)
+
+      font:
+        family: $primary
+        weight: 700
+        size: rem(15)
+      color: $brightPink
+
+      border: none
+        radius: rem(50)
+
+      box-shadow: 0 rem(6) rem(6) rgba(0, 0, 0, .15)
+
+      &:nth-of-type(1)
+        background: $hotPink
+
+      &:nth-of-type(2)
+        background: $burgundy
+
+      @media (min-width: $medium)
+        width: rem(200)
+        height: rem(60)
+
+        font-size: rem(25)
+
+      @media (min-width: $large)
+        transition: background .3s ease
+        cursor: pointer
+
+        &:hover
+          background: $brightPink
+
+          color: $blue
+
+  &__delimiter
+    margin-top: rem(40)
+
+    border-color: #444
+
+  &__information
+    display: flex
+    align-items: center
+    flex-direction: column
+
+    @media (min-width: $large)
+      flex-direction: row
+      justify-content: center
+      // gap: rem(60)
+
+    &__links
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: rem(10)
+      margin-top: rem(40)
+
+      @media (min-width: $large)
+        padding-right: rem(40)
+
+        align-items: flex-end
+
+        border-right: solid 1px #444
+
+      &__link
+        font:
+          family: $secondary
+          size: rem(25)
+        text-decoration: none
+        color: $brightPink
+
+        @media (min-width: $medium)
+          font-size: rem(30)
+
+        @media (min-width: $large)
+          &:hover
+            text-decoration: underline
+
+    &__delimiter
+      width: 100%
+      margin-top: rem(40)
+
+      border-color: #444
+
+      @media (min-width: $large)
+        display: none
+
+    &__useful
+      display: flex
+      flex-direction: column
+      margin-top: rem(40)
+
+      @media (min-width: $large)
+        padding-left: rem(40)
+        align-items: flex-start
+
+      &__follow
+        text-align: center
+
+        @media (min-width: $large)
+          text-align: initial
+
+        &__title
+          font:
+            family: $secondary
+            size: rem(30)
+          color: $brightPink
+
+        &__icon
+          margin-top: rem(20)
+
+          font-size: rem(40)
+          text-decoration: none
+          color: darken($blue, 5%)
+
+          &:not(:nth-of-type(1))
+            margin-left: rem(20)
+
+          @media (min-width: $large)
+            &:hover
+              color: $brightPink
+
+      &__contact
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-top: rem(40)
+        gap: rem(20)
+
+        @media (min-width: $large)
+          align-items: flex-start
+
+        &__title
+          font:
+            family: $secondary
+            size: rem(30)
+          color: $brightPink
+
+        &__phone, &__email
+          display: flex
+          align-items: center
+          gap: rem(20)
+
+          &__icon
+            font-size: rem(40)
+            color: darken($blue, 5%)
+
+          &__text
+            font:
+              family: $secondary
+              size: rem(20)
+            color: $brightPink
